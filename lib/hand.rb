@@ -11,6 +11,11 @@ class Hand
     @cards.concat(cards_arr)
   end
 
+  def empty
+    @cards = []
+    @counted_cards = []
+  end
+
   def discard(indicies)
     new_cards = []
     cards.each_with_index do |card, i|
@@ -20,6 +25,9 @@ class Hand
   end
 
   def display
+    cards.each do |card|
+      print card.to_s + ' '
+    end
   end
 
   def score
